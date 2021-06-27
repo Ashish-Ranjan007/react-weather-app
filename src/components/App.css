@@ -1,0 +1,376 @@
+.app {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
+@media only screen and (max-height: 750px) {
+	.app {
+		height: 100%;
+	}
+}
+.app__main {
+	width: 80%;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.app__sidebar {
+	width: 20%;
+}
+.main__searchbar {
+	display: flex;
+}
+
+.sidebar {
+	height: 100%;
+	background-color: #6165f7;
+}
+.sidebar__list {
+	margin-top: 0.75rem;
+	padding: 0;
+	height: auto;
+	width: 100%;
+}
+.sidebar__list .row {
+	width: 100%;
+	height: 50px;
+	list-style-type: none;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	color: rgb(211, 211, 211);
+	justify-content: center;
+	align-items: center;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.row #icon {
+	flex: 25%;
+	display: grid;
+	place-items: center;
+}
+.row #title {
+	flex: 75%;
+	font-size: 0.95rem;
+}
+.sidebar__list .row:hover {
+	color: white;
+	cursor: pointer;
+	background-color: #7074f8;
+}
+.sidebar__list #active {
+	background-image: linear-gradient(to right, #767bf5, #6165f7);
+	box-shadow: inset 3px 0px 0 0 rgb(255, 255, 255);
+	color: white;
+}
+.sidebar__logo {
+	font-size: 1.5rem;
+	color: white;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	width: 84%;
+	margin: auto;
+	letter-spacing: 0.15rem;
+	display: flex;
+	align-items: center;
+}
+.sidebar__logo span {
+	padding-left: 0.45rem;
+}
+.card__header {
+	display: flex;
+	justify-content: center;
+}
+.card__header .left {
+	color: #6165f7;
+	padding-top: 0.5rem;
+	padding-right: 0.3rem;
+}
+.card__header .right {
+	padding-left: 0.3rem;
+}
+.card__header .right .today {
+	font-size: 1rem;
+	font-weight: 500;
+}
+.card__header .right .time {
+	margin: 0;
+	color: rgb(50, 50, 50);
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+.card__header .right .date {
+	margin: 0;
+	margin-top: 0.25rem;
+	font-weight: 600;
+	color: grey;
+}
+.card__body {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.card__body .temperature {
+	font-size: 2rem;
+	font-weight: 500;
+}
+.card__body .city {
+	margin-top: 0.5rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+.card__body .country {
+	font-size: 0.75rem;
+	margin: 0.25rem;
+}
+
+.card__body .humidity,
+.card__body .precipitation {
+	margin-top: 0.5rem;
+	width: 70%;
+	position: relative;
+	margin-bottom: 0.5rem;
+}
+.card__body .humidity .humidity__content,
+.card__body .precipitation .precipitation__content {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.25rem;
+	font-size: 0.75rem;
+	letter-spacing: 0.1rem;
+	font-weight: 500;
+}
+.card__body .humidity .humidity__content .text,
+.card__body .precipitation .precipitation__content .text {
+	flex: 1;
+}
+.card__body .humidity .border-bottom {
+	border-bottom: 2px solid #6165f7;
+	width: 70%;
+}
+.card__body .precipitation .border-bottom {
+	border-bottom: 2px solid #6165f7;
+	width: 30%;
+}
+
+.card__body .wind {
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	letter-spacing: 0.1rem;
+	font-weight: 500;
+	display: flex;
+	width: 70%;
+}
+.card__body .wind .text {
+	flex: 1;
+}
+.card__component {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	width: 90%;
+	margin: auto;
+}
+.searchbar {
+	width: 50%;
+}
+.searchbar__form {
+	position: relative;
+	width: 100%;
+}
+.searchbar__input {
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+	padding: 10px 10px;
+	border-bottom: 1px solid #8d8d8d;
+}
+.searchbar__input ~ .border-bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 1px;
+}
+.searchbar__input:focus ~ .border-bottom {
+	width: 100%;
+	border: 1px solid #4285f4;
+	transition: 500ms;
+}
+.border-bottom {
+	border: 1px solid transparent;
+}
+.searchbar__icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.city__content {
+	position: relative;
+	cursor: pointer;
+	border-radius: 1rem;
+	text-align: center;
+	border-radius: 1rem;
+	box-shadow: 18px 10px 14px 0px rgb(243, 243, 243, 0.7);
+	transition: transform 300ms ease;
+}
+.city__content:hover {
+	transform: translateY(-5%);
+}
+.city__text {
+	position: absolute;
+	bottom: 0;
+	right: -1px;
+	font-size: 0.7rem;
+	font-weight: 500;
+	padding: 0.5rem 0.75rem;
+	border-top-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	background-color: rgb(255, 255, 255);
+}
+.city__image {
+	position: relative;
+	width: 156px;
+	border-radius: 1rem;
+}
+.city__title {
+	margin: 0.5rem;
+	text-align: center;
+	font-size: 1rem;
+}
+.city__weatherIcon {
+	margin-left: 0.4rem;
+	width: 0.8rem;
+}
+.main__searchbar {
+	margin-top: 1rem;
+}
+.main__forecast {
+	margin-top: 2rem;
+}
+.account {
+	width: 50%;
+}
+.account__box {
+	width: 150px;
+	height: 50px;
+	margin-left: auto;
+	border: 2px solid #333;
+	font-family: 'Cinzel', serif;
+	font-size: 20px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 0;
+	transition: 1s;
+}
+
+.account__box::before,
+.account__box::after {
+	position: absolute;
+	background: rgb(255, 255, 255);
+	z-index: -1;
+	transition: 1s;
+	content: '';
+}
+.account__box::before {
+	height: 50px;
+	width: 130px;
+}
+
+.account__box::after {
+	width: 150px;
+	height: 30px;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.account__box:hover::before {
+	width: 0px;
+	background: #fff;
+}
+
+.account__box:hover::after {
+	height: 0px;
+	background: #fff;
+}
+
+.account__box:hover {
+	background: #fff;
+	border-color: #4285f4;
+}
+.account__text {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.account .account__text {
+	font-size: 1rem;
+	font-weight: 500;
+	user-select: none;
+}
+.statCard {
+	width: 70px;
+	padding: 1rem;
+	cursor: pointer;
+	text-align: center;
+	background-color: #fcfcfc;
+	border-radius: 1rem;
+	box-shadow: 6px 10px 15px 4px rgba(241, 241, 241, 1);
+	transition: all 300ms ease;
+}
+.statCard:hover {
+	background-color: #f0f0f0;
+	transform: translateY(-5%);
+	box-shadow: 0, 0, 0, 0, rgba(241, 241, 241, 0.9);
+}
+.statCard .statCard__image {
+	margin-bottom: 0.5rem;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+.statCard .statCard__minmaxTemp {
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+.statCard .statCard__date {
+	margin-top: 0.25rem;
+	color: grey;
+}
+.weatherStats {
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+}
+.weatherStats .statCards {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.weatherStats > p {
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: 0.25rem;
+	margin-bottom: 0.5rem;
+}
+.statCards > div:not(:first-child) {
+	margin: 0 1.2rem;
+}
